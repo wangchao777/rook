@@ -141,6 +141,7 @@ func reconcileOperatorLogLevel(data map[string]string) {
 }
 
 func (r *ReconcileConfig) reconcileDiscoveryDaemon(data map[string]string) error {
+	return nil
 	rookDiscover := discover.New(r.context.Clientset)
 	if opcontroller.DiscoveryDaemonEnabled(r.config.Parameters) {
 		if err := rookDiscover.Start(r.opManagerContext, r.config.OperatorNamespace, r.config.Image, r.config.ServiceAccount, data, true); err != nil {
